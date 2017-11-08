@@ -1,0 +1,164 @@
+<div id="insumo-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= title %></h4>
+      </div>
+<%= form_for @insumo, remote: true do |form| %>
+
+   <div class="modal-body">
+   <table>
+  <thead>
+    <tr>
+    <th>
+  
+   <div class="btn-group">
+  <div class="form-group row">
+  <div class="col-xs-3 ">
+    <%= form.label :Codigo %>
+     </div>
+    <div class="col-xs-8">
+    <%= form.text_field :codigo, autofocus: true, placeholder: "Codigo", class: "form-control"  %>
+
+  
+  </div>
+  </div>
+</th>
+<th>
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Nombre %>
+     </div>
+    <div class="col-xs-8">
+    <%= form.text_field :nombre, autofocus: true, placeholder: "Nombre", class: "form-control"  %>
+  </div>
+  </div>
+ </th>
+  </tr>
+
+  <tr>
+ <th>
+  <div class="form-group row">
+  <div class="col-xs-4">
+    <%= form.label :Descripcion %>
+     </div>
+    <div class="col-xs-8">
+    <%= form.text_area :descripcion, autofocus: true, placeholder: "Descripcion", class: "form-control"  %>
+  </div>
+  </div>
+ </th>
+</tr>
+<tr>
+ <th>
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Precio_compra %>
+     </div>
+    <div class="col-xs-9">
+    <%= form.text_field :precio_compra, autofocus: true, placeholder: "PrecioC", class: "form-control"  %>
+  </div>
+  </div>
+ </th>
+      
+
+    <th>
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :PrecioV %>
+     </div>
+    <div class="col-xs-8">
+    <%= form.text_field :precio_venta, autofocus: true, placeholder: "Precio Venta", class: "form-control"  %>
+  </div>
+  </div>
+    </tr> 
+    <tr> 
+  <th>
+ <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Stock %>
+     </div>
+    <div class="col-xs-9">
+    <%= form.text_field :stock, autofocus: true, placeholder: "stock", class: "form-control"  %>
+  </div>
+  </div>
+   </th>
+    
+
+    <th>
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Stock_Minimo %>
+     </div>
+    <div class="col-xs-8">
+    <%= form.text_area :stock_minimo, autofocus: true, placeholder: "Stock-Minimo", class: "form-control"  %>
+  </div>
+  </div>
+ </th> 
+ <th>
+ </tr>
+
+    </thead>
+   </table>
+ 
+ <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Unidad_id %>
+  </div>
+ <div class="col-xs-5">
+     <%= form.collection_select :unidades_medida_id, UnidadesMedida.all, :id, :descripcion, 
+                  {selected: @insumo.unidades_medida_id, include_blank: 'Seleccione Unidad Medida'},
+                  {class: "form-control"} %>
+     
+    </div>
+     <%= link_to  new_unidades_medida_path, remote: true, class: "btn btn-success" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nueva Unidad
+    <% end %>
+  </div>
+  
+   
+
+  <tr>
+    <th>
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Proveedor_id %>
+  </div>
+ <div class="col-xs-5">
+     <%= form.collection_select :proveedore_id, Proveedore.all, :id, :empresa, 
+                  {selected: @insumo.proveedore_id, include_blank: 'Seleccione Proveedor'},
+                  {class: "form-control"} %>
+     
+    </div>
+     <%= link_to  new_proveedore_path, remote: true, class: "btn btn-success" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Agregar Proveedor
+    <% end %>
+  </div>
+ 
+  
+  
+
+  <div class="form-group row">
+  <div class="col-xs-3">
+    <%= form.label :Iva_id %>
+  </div>
+ <div class="col-xs-6">
+     <%= form.collection_select :tipo_iva_id, TipoIva.all, :id, :decripcion, 
+                  {selected: @insumo.tipo_iva_id, include_blank: 'Seleccione iva'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+ 
+  <div class="form-group row">
+    <div class="col-xs-10">
+       <div class="col-xs-7">
+    </div>
+   <%= form.submit "Aceptar", class: "btn btn-success" %>
+   <%= link_to 'Cancelar', medicos_path, class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

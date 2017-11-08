@@ -1,0 +1,7 @@
+<tr id="<%= paciente.id %>">
+ 
+  <td><%= paciente.nombre %></td>
+  <td>
+    <%= link_to "Editar", edit_paciente_path(paciente), remote: true %>
+  </td>
+</tr>

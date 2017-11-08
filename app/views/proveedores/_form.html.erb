@@ -1,0 +1,72 @@
+<%= form_with(model: proveedore, local: true) do |form| %>
+  <% if proveedore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(proveedore.errors.count, "error") %> prohibited this proveedore from being saved:</h2>
+
+      <ul>
+      <% proveedore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cedula %>
+    <%= form.text_field :cedula, id: :proveedore_cedula %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :proveedore_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellido %>
+    <%= form.text_field :apellido, id: :proveedore_apellido %>
+  </div>
+
+  <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :Ciudad_id %>
+  </div>
+ <div class="col-xs-6">
+     <%= form.collection_select :ciudade_id, Ciudade.all, :id, :nombre, 
+                  {selected: @proveedore.ciudade_id, include_blank: 'Seleccione Ciudad'},
+                  {class: "form-control"} %>
+     
+    </div>
+     <%= link_to  new_ciudade_path, remote: true, class: "btn btn-success" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>  Ciudad
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :proveedore_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empresa %>
+    <%= form.text_field :empresa, id: :proveedore_empresa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, id: :proveedore_telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :celular %>
+    <%= form.text_field :celular, id: :proveedore_celular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correo %>
+    <%= form.text_field :correo, id: :proveedore_correo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

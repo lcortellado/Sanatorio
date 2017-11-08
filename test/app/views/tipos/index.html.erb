@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipos.each do |tipo| %>
+      <tr>
+        <td><%= tipo.descripcion %></td>
+        <td><%= link_to 'Show', tipo %></td>
+        <td><%= link_to 'Edit', edit_tipo_path(tipo) %></td>
+        <td><%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo', new_tipo_path %>

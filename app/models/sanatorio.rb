@@ -1,0 +1,2 @@
+class Sanatorio < ApplicationRecord
+end

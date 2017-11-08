@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  insumo: one
+  qty: 1
+  price: 9.99
+  compra: one
+
+two:
+  number: 1
+  insumo: two
+  qty: 1
+  price: 9.99
+  compra: two

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  diagnostico: MyString
+  indicaciones: MyString
+  fecha_proxima_cita: 2017-10-06
+  recomendaciones: MyString
+  reserva: one
+  estudios: MyString
+  resultestudios: MyString
+  precio: 1
+  descuento: 1
+  total: 1
+
+two:
+  codigo: MyString
+  diagnostico: MyString
+  indicaciones: MyString
+  fecha_proxima_cita: 2017-10-06
+  recomendaciones: MyString
+  reserva: two
+  estudios: MyString
+  resultestudios: MyString
+  precio: 1
+  descuento: 1
+  total: 1

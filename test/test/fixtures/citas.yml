@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asunto: MyString
+  paciente: one
+  medico: one
+  nro_orden: MyString
+  fecha: 2017-08-12
+  nota: MyString
+  estado: one
+  estadoPago: MyString
+  costo: 1
+
+two:
+  asunto: MyString
+  paciente: two
+  medico: two
+  nro_orden: MyString
+  fecha: 2017-08-12
+  nota: MyString
+  estado: two
+  estadoPago: MyString
+  costo: 1

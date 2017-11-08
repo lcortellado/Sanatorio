@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diagnostico: MyString
+  indicaciones: MyString
+  fecha_proxima_cita: 2017-09-20
+  recomendaciones: MyString
+  reserva: one
+
+two:
+  diagnostico: MyString
+  indicaciones: MyString
+  fecha_proxima_cita: 2017-09-20
+  recomendaciones: MyString
+  reserva: two

@@ -1,0 +1,113 @@
+<%= form_with(model: cita, local: true) do |form| %>
+  <% if cita.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cita.errors.count, "error") %> prohibited this cita from being saved:</h2>
+
+      <ul>
+      <% cita.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :asunto %>
+      </div>
+  <div class="col-xs-5">
+    <%= form.text_field :asunto, autofocus: true, placeholder: "Escribir motivo consulta", class: "form-control" %>
+  </div>
+  </div>
+  
+<div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :paciente_id %>
+  </div>
+  <div class="col-xs-5">
+     <%= form.collection_select :paciente_id, Paciente.all, :id, :nombre, 
+                  {selected: @cita.paciente_id, include_blank: 'Seleccione paciente'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+
+  <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :medico_id %>
+  </div>
+  <div class="col-xs-5">
+     <%= form.collection_select :medico_id, Medico.all, :id, :nombre, 
+                  {selected: @cita.medico_id, include_blank: 'Seleccione Medico'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+
+   <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :nro_orden %>
+      </div>
+    <div class="col-xs-5">
+    <%= form.text_field :nro_orden, autofocus: true, placeholder: "Numero de turno", class: "form-control" %>
+  </div>
+   </div>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :fecha %>
+      </div>
+    <div class="col-xs-5">
+    <%= form.date_select :fecha,  autofocus: true, placeholder: "Fecha", class: "form-control" %>
+  </div>
+   </div>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :nota %>
+     </div>
+    <div class="col-xs-5">
+    <%= form.text_field :nota, autofocus: true, placeholder: "Escribir notas", class: "form-control"  %>
+  </div>
+  </div>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :estado_de_cita_id %>
+  </div>
+  <div class="col-xs-5">
+     <%= form.collection_select :estado_id, Estado.all, :id, :decripcion, 
+                  {selected: @cita.estado_id, include_blank: 'Seleccione Estado'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :estado_pago %>
+     </div>
+    <div class="col-xs-5">
+    <%= form.text_field :estadoPago, autofocus: true, placeholder: "Escribir estado de Pago", class: "form-control"  %>
+  </div>
+  </div>
+
+ <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :costo %>
+     </div>
+    <div class="col-xs-5">
+    <%= form.text_field :costo, autofocus: true, placeholder: "Costo", class: "form-control"  %>
+  </div>
+  </div>
+  <div class="form-group row">
+<div class="col-xs-10">
+   <div class="col-xs-7">
+    </div>
+   <%= form.submit "Aceptar", class: "btn btn-success" %>
+   <%= link_to 'Cancelar', citas_path, class: "btn btn-success" %>
+   </div>
+    </div>
+<% end %>
+ </div>
+  </div>

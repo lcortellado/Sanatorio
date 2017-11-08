@@ -1,0 +1,9 @@
+<% if @ciudade.errors.empty? %>
+  // add the row to the table, show alert and hide modal
+  $('table tbody').append(' <%= j render "row", horario: @horario %>');
+  $('.alert-success').html("Horario ha sido creado con éxito").show();
+  $('#horario-modal').modal('hide');
+<% else %>
+  // show first error
+  alert('<%= @horario.errors.full_messages[0] %>');
+<% end %>

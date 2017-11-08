@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 1
+  usuario: one
+  sanatorio: one
+  pedido: one
+
+two:
+  codigo: 1
+  usuario: two
+  sanatorio: two
+  pedido: two

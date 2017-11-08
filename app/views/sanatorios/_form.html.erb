@@ -1,0 +1,52 @@
+<%= form_with(model: sanatorio, local: true) do |form| %>
+  <% if sanatorio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sanatorio.errors.count, "error") %> prohibited this sanatorio from being saved:</h2>
+
+      <ul>
+      <% sanatorio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :sanatorio_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion, id: :sanatorio_direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono1 %>
+    <%= form.text_field :telefono1, id: :sanatorio_telefono1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono2 %>
+    <%= form.text_field :telefono2, id: :sanatorio_telefono2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefon3 %>
+    <%= form.text_field :telefon3, id: :sanatorio_telefon3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pagina %>
+    <%= form.text_field :pagina, id: :sanatorio_pagina %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :sanatorio_photo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

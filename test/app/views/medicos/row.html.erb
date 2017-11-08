@@ -1,0 +1,9 @@
+<tr id="<%= medico.id %>">
+ 
+  <td><%= medico.nombre %></td>
+   <td><%= medico.apellido %></td>
+    <td><%= medico.especialidad.descripcion %></td>
+  <td>
+    <%= link_to "Editar", edit_medico_path(medico), remote: true %>
+  </td>
+</tr>

@@ -1,0 +1,9 @@
+<% if @especialidade.errors.empty? %>
+  // add the row to the table, show alert and hide modal
+  $('table tbody tr#<%= @especialidade.id %>').replaceWith(' <%= j render "row", especialidade: @especialidade %>');
+  $('.alert-success').html("La Especialidad ha sido modificada con éxito").show();
+  $('#especialidade-modal').modal('hide');
+<% else %>
+  // show first error
+  alert('<%= @especialidade.errors.full_messages[0] %>');
+<% end %>

@@ -1,0 +1,9 @@
+$("ul.errors").html("");
+<% if @compra.compra_details.last.errors.any? %>
+	<% @compra.compra_details.last.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
+	<% end %>
+<% else %>
+	$("#compra-details").html("<%= escape_javascript(render(partial: 'compras/table', locals: { compra: @compra, show_actions: true })) %>");
+	$("#new-detail-modal").modal("hide");
+<% end %>

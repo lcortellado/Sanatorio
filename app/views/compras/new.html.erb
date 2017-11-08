@@ -1,0 +1,10 @@
+
+<div class="container-fluid">
+	<div class="row">
+		<h1>Nueva Compra</h1>
+
+		<%= render 'form', compra: @compra %>
+
+		<%= link_to 'Volver', compras_path, data: { confirm: "Se perderán los cambios ¿Está seguro?" } %>
+	</div>
+</div>

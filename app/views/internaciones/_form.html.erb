@@ -1,0 +1,63 @@
+<%= form_with(model: internacione, local: true) do |form| %>
+  <% if internacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(internacione.errors.count, "error") %> prohibited this internacione from being saved:</h2>
+
+      <ul>
+      <% internacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fechaIng %>
+    <%= form.date_field :fechaIng, id: :internacione_fechaIng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaIng %>
+    <%= form.time_field :horaIng, id: :internacione_horaIng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaSalida %>
+    <%= form.date_field :fechaSalida, id: :internacione_fechaSalida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaSalida %>
+    <%= form.time_field :horaSalida, id: :internacione_horaSalida %>
+  </div>
+
+  <div class="control-group">
+  <%= form.label :Habitaciones_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:internacione, :habitacione_id, Habitacione.all, :id, :descripcion, {prompt: true}) %>
+    </div>
+  </div>
+
+ <div class="control-group">
+  <%= form.label :paciente_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:internacione, :paciente_id, Paciente.all, :id, :nombre, {prompt: true}) %>
+    </div>
+  </div>
+
+  <div class="control-group">
+  <%= form.label :medico_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:internacione, :medico_id, Medico.all, :id, :nombre, {prompt: true}) %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :totalGasto %>
+    <%= form.number_field :totalGasto, id: :internacione_totalGasto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

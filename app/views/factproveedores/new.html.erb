@@ -1,0 +1,86 @@
+<% content_for :subtitulo do %>
+  Facturar
+<% end %>
+
+<div class="col-md-12">
+  <%= form_for (@factproveedore) do |f| %>
+  <% if @factproveedore.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h2><center>!Error al crear el Factura!</center></h2>
+      <ul>
+      <% @factproveedore.errors.each_with_index do |msg| %>
+        <li><strong><%= msg[1] %></strong></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="well">
+      Factura Número: <%= @factproveedore.codigo %><br>
+    
+        
+        <h4>Factura para:
+          <%= f.collection_select(:sanatorio_id, Sanatorio.all, :id, :nombre, prompt: "Seleccione Cliente") %> 
+           
+          Condicion de Venta <%= f.collection_select(:formas_pago_id, FormasPago.all, :id, :descripcion, prompt: "") %></h4>
+ 
+
+       <br>
+
+        <table>
+          <thead class="header-table">
+            <tr>
+              
+              <th>
+                <center>Cantidad</center>
+              </th>
+              <th>
+                <center> Artículo</center>
+              </th>
+
+               <th>
+                <center>Precio Unit</center>
+              </th>
+               <th>
+                <center>Exentas</center>
+              </th>
+               <th>
+                <center>IVA 5%</center>
+              </th>
+               <th>
+                <center>IVA 10%</center>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <%= f.fields_for :detallefactproveedores do |detalle| %>
+            <tr>
+             <td>
+                <%= detalle.text_field :cantidad %>
+              </td>
+              <td>
+                <%= detalle.collection_select(:insumo_id, Insumo.all, :id, :descripcion, prompt: "") %>
+              </td>
+             
+              <td>
+                <%= detalle.text_field :precio %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table><br>
+        <%= button_tag( :class => "btn btn-success") do %>
+          <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
+        <% end %>
+        <%= link_to factproveedores_path, class:"btn btn-primary" do%>
+        <i class="glyphicon glyphicon-repeat"></i> Regresar
+        <% end %>
+      </div>
+    </div>
+    <%= f.hidden_field :codigo, :value => @codigo %>
+    <%= f.hidden_field :usuario_id, :value => current_usuario.id %>
+  <% end %>
+  </div>
+</div>

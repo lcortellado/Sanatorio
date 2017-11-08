@@ -1,0 +1,22 @@
+<%= form_with(model: tipo_iva, local: true) do |form| %>
+  <% if tipo_iva.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipo_iva.errors.count, "error") %> prohibited this tipo_iva from being saved:</h2>
+
+      <ul>
+      <% tipo_iva.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :decripcion %>
+    <%= form.text_field :decripcion, id: :tipo_iva_decripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

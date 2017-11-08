@@ -1,0 +1,9 @@
+<% if @departamento.errors.empty? %>
+  // add the row to the table, show alert and hide modal
+  $('table tbody').append(' <%= j render "row", departamento: @departamento %>');
+  $('.alert-success').html("El departamento ha sido creado con éxito").show();
+  $('#departamento-modal').modal('hide');
+<% else %>
+  // show first error
+  alert('<%= @departamento.errors.full_messages[0] %>');
+<% end %>

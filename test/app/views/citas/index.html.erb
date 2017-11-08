@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Citas</h1>
+ <div class="col-md-5 col-md-offset-5 col-sm-5 col-sm-offset-5">
+      <p>
+        <%= button_to new_cita_path, {method: :get, class: "btn btn-success"} do %>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Registrar Nueva Cita
+        <% end %>
+      </p>
+    </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+     <th></th>
+      <th>Asunto</th>
+      <th>Paciente</th>
+      <th>Medico</th>
+      <th>Nro orden</th>
+      <th>Fecha</th>
+      <th>Nota</th>
+      <th>Estado</th>
+      <th>Estadopago</th>
+      <th>Costo</th>
+      <td><strong>Fecha Creacion</strong></td>
+        <td><strong>Fecha Modificacion</strong></td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @citas.each do |cita| %>
+      <tr>
+       <td>
+          <%= button_to cita_path(cita), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span> Ver
+          <% end %>
+        </td>
+        <td><%= cita.asunto %></td>
+        <td><%= cita.paciente.nombre %></td>
+        <td><%= cita.medico.nombre %></td>
+        <td><%= cita.nro_orden %></td>
+        <td><%= cita.fecha.strftime("%d/%m/%Y") %></td>
+        <td><%= cita.nota %></td>
+        <td><%= cita.estado.decripcion %></td>
+        <td><%= cita.estadoPago %></td>
+        <td><%= cita.costo %></td>
+          <td><%= cita.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= cita.updated_at.strftime("%d/%m/%Y") %></td>
+        <td> <%= button_to edit_cita_path(cita), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Editar
+          <% end %></td>
+       <td>
+          <%= button_to cita, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Cancelar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+ 
+</table>
+
+ </div>

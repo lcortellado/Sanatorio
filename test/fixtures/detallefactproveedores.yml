@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factproveedores: one
+  number: 1
+  insumo: one
+  cantidad: 1
+  precio: 9.99
+
+two:
+  factproveedores: two
+  number: 1
+  insumo: two
+  cantidad: 1
+  precio: 9.99

@@ -1,0 +1,32 @@
+<%= form_with(model: delle_pedido, local: true) do |form| %>
+  <% if delle_pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(delle_pedido.errors.count, "error") %> prohibited this delle_pedido from being saved:</h2>
+
+      <ul>
+      <% delle_pedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pedido_id %>
+    <%= form.text_field :pedido_id, id: :delle_pedido_pedido_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insumo_id %>
+    <%= form.text_field :insumo_id, id: :delle_pedido_insumo_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.number_field :cantidad, id: :delle_pedido_cantidad %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

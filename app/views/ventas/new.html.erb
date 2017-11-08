@@ -1,0 +1,9 @@
+<div class="container-fluid">
+	<div class="row">
+		<h1>Nueva Venta</h1>
+
+		<%= render 'form', venta: @venta %>
+
+		<%= link_to 'Volver', ventas_path, data: { confirm: "Se perderán los cambios ¿Está seguro?" } %>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Proveedores</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cedula</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Ciudade</th>
+      <th>Direccion</th>
+      <th>Empresa</th>
+      <th>Telefono</th>
+      <th>Celular</th>
+      <th>Correo</th>
+        <th>Fecha Creacion</th>
+      <th>Fecha Modificacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proveedores.each do |proveedore| %>
+      <tr>
+        <td><%= proveedore.cedula %></td>
+        <td><%= proveedore.nombre %></td>
+        <td><%= proveedore.apellido %></td>
+        <td><%= proveedore.ciudade.nombre %></td>
+        <td><%= proveedore.direccion %></td>
+        <td><%= proveedore.empresa %></td>
+        <td><%= proveedore.telefono %></td>
+        <td><%= proveedore.celular %></td>
+        <td><%= proveedore.correo %></td>
+         <td><%= proveedore.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= proveedore.updated_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', proveedore %></td>
+        <td><%= link_to 'Edit', edit_proveedore_path(proveedore) %></td>
+        <td><%= link_to 'Destroy', proveedore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proveedore', new_proveedore_path %>

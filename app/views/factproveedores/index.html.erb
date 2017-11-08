@@ -1,0 +1,34 @@
+<% content_for :subtitulo do %>
+  Facturas Proveedor
+<% end %>
+
+<%= link_to new_factproveedore_path, class: "btn btn-success"  do%>
+  <i class="glyphicon glyphicon-plus"></i> Crear Pedido
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <th>Factura N°</th>
+    <th>Cliente</th>
+    <th>Opciones</th>
+  </thead>
+  <tbody>
+    <% @factproveedores.each do |factproveedore| %>
+      <tr>
+        <td> <strong><%= factproveedore.codigo %></strong> </td>
+        <td> <%= factproveedore.sanatorio.nombre %></td>
+         <td> <%= number_to_currency(factproveedore.total) %></td>
+        <td>
+        
+          <%= link_to factproveedore_path(factproveedore), class: "btn btn-primary" do %>
+            <i class="glyphicon glyphicon-eye-open"></i> Detalles
+          <% end %>
+
+          <%= link_to factproveedore_path(factproveedore), class: "btn btn-danger", method: :delete,data: { confirm: 'Estas seguro de eliminar?' } do %>
+            <i class="glyphicon glyphicon-trash"></i> Anular
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

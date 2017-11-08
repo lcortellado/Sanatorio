@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  date: 2017-11-01
+  state: 1
+  usuario: one
+  formas_pago: one
+  proveedore: one
+
+two:
+  number: 1
+  date: 2017-11-01
+  state: 1
+  usuario: two
+  formas_pago: two
+  proveedore: two

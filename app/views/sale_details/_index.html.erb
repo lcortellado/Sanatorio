@@ -1,0 +1,12 @@
+<% @sale.sale_details.each do |detail| %>
+	<tr>
+		<td><%= detail.number %></td>
+		<td><%= detail.insumo.descripcion %></td>
+		<td class="text-right"><%= detail.qty %></td>
+		<td class="text-right"><%= number_to_currency(detail.insumo.price) %></td>
+		<td class="text-right"><%= number_to_currency(detail.subtotal) %></td>
+		<% if show_actions %>
+			<td><%= link_to "Eliminar", sale_sale_detail_path(detail.sale.id, detail.id), method: :delete, remote: true, class: "btn btn-danger" %> </td>
+		<% end %>
+	</tr>
+<% end %>

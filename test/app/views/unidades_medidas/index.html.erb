@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unidades Medidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unidades_medidas.each do |unidades_medida| %>
+      <tr>
+        <td><%= unidades_medida.descripcion %></td>
+        <td><%= link_to 'Show', unidades_medida %></td>
+        <td><%= link_to 'Edit', edit_unidades_medida_path(unidades_medida) %></td>
+        <td><%= link_to 'Destroy', unidades_medida, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unidades Medida', new_unidades_medida_path %>

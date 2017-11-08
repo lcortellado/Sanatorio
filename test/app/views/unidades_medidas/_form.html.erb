@@ -1,0 +1,22 @@
+<%= form_with(model: unidades_medida, local: true) do |form| %>
+  <% if unidades_medida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(unidades_medida.errors.count, "error") %> prohibited this unidades_medida from being saved:</h2>
+
+      <ul>
+      <% unidades_medida.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :unidades_medida_descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

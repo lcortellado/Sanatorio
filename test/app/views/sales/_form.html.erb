@@ -1,0 +1,58 @@
+
+<div class="container-fluid" id="sale-form">
+  <div class="row">
+
+    <div class="panel-body">
+      <%= form_for(@sale) do |f| %>
+        <% if @sale.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+            <ul>
+            <% @sale.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-xs-5 col-md-4">
+            <div class="form-group">
+              <div class="col-xs-6 col-md-4 text-left">
+                <%= f.label :number, "Número" %>
+              </div>
+              <div class="col-xs-6 col-md-4">
+                <%= f.text_field :number, placeholder: "Número", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-4">
+            <div class="form-group">
+              <div class="col-xs-4 col-md-4 text-right">
+                <%= f.label :date, "Fecha" %>
+              </div>
+              <div class="col-xs-8 col-md-6 text-right">
+                <%= f.date_field :date, placeholder: "Fecha", class: "form-control" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <br>
+        <div class="panel-body" id="sale-details">
+          <%= (@sale.sale_details.count > 0) ? render(partial: 'table', locals: { sale: @sale, show_actions: true }) : 'No hay detalles cargados' %>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-5 text-center">
+            <%= link_to "Nuevo detalle", new_sale_sale_detail_path(sale_id: @sale.id), remote: true, class: "btn btn-info" %>
+          </div>
+        </div>
+        <br>
+        <% message = (action_name == 'edit') ? "Volver" : "Aceptar" %>
+        <%= f.submit message, class: "btn btn-success" %>
+      <% end %>
+      <div class="modal fade" id="new-detail-modal" title="Modal"></div>
+    </div>
+  </div>
+</div>

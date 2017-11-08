@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: 1
+  fecha: 2017-09-27
+  proveedore: one
+
+two:
+  codigo: 1
+  fecha: 2017-09-27
+  proveedore: two

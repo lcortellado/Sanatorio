@@ -1,0 +1,9 @@
+$("ul.errors").html("");
+<% if @venta.venta_details.last.errors.any? %>
+	<% @venta.venta_details.last.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
+	<% end %>
+<% else %>
+	$("#venta-details").html("<%= escape_javascript(render(partial: 'ventas/table', locals: { venta: @venta, show_actions: true })) %>");
+	$("#new-detail-modal").modal("hide");
+<% end %>

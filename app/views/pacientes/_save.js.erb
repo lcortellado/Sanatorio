@@ -1,0 +1,9 @@
+$("ul.errors").html("");
+<% if @pacientes.last.errors.any? %>
+	<% @pacientes.last.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
+	<% end %>
+<% else %>
+	$("#pacientes").html("<%= escape_javascript(render(partial: 'pacientes/table', locals: { paciente: @paciente, show_actions: true })) %>");
+	$("#new-detail-modal").modal("hide");
+<% end %>

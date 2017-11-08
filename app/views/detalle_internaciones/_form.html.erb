@@ -1,0 +1,54 @@
+<%= form_with(model: detalle_internacione, local: true) do |form| %>
+  <% if detalle_internacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(detalle_internacione.errors.count, "error") %> prohibited this detalle_internacione from being saved:</h2>
+
+      <ul>
+      <% detalle_internacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, id: :detalle_internacione_descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.text_field :cantidad, id: :detalle_internacione_cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preciouni %>
+    <%= form.number_field :preciouni, id: :detalle_internacione_preciouni %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtotal %>
+    <%= form.number_field :subtotal, id: :detalle_internacione_subtotal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_select :fecha, id: :detalle_internacione_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hora %>
+    <%= form.time_select :hora, id: :detalle_internacione_hora %>
+  </div>
+
+  <div class="control-group">
+  <%= form.label :internado_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= collection_select(:detalle_internacione, :internacione_id, Internacione.all, :id, :paciente_id, {prompt: true}) %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

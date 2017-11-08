@@ -1,0 +1,27 @@
+<%= form_with(model: hora, local: true) do |form| %>
+  <% if hora.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hora.errors.count, "error") %> prohibited this hora from being saved:</h2>
+
+      <ul>
+      <% hora.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, id: :hora_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horas %>
+    <%= form.time_field :horas, id: :hora_horas %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

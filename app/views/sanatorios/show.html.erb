@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @sanatorio.nombre %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @sanatorio.direccion %>
+</p>
+
+<p>
+  <strong>Telefono1:</strong>
+  <%= @sanatorio.telefono1 %>
+</p>
+
+<p>
+  <strong>Telefono2:</strong>
+  <%= @sanatorio.telefono2 %>
+</p>
+
+<p>
+  <strong>Telefon3:</strong>
+  <%= @sanatorio.telefon3 %>
+</p>
+
+<p>
+  <strong>Pagina:</strong>
+  <%= @sanatorio.pagina %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @sanatorio.photo %>
+</p>
+
+<%= link_to 'Edit', edit_sanatorio_path(@sanatorio) %> |
+<%= link_to 'Back', sanatorios_path %>

@@ -1,0 +1,9 @@
+$("ul.errors").html("");
+<% if @especialidades.last.errors.any? %>
+	<% @especialidades.last.errors.full_messages.each do |message| %>
+		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
+	<% end %>
+<% else %>
+	$("#especialidades").html("<%= escape_javascript(render(partial: 'especialidades/table', locals: { especialidade: @especialidade, show_actions: true })) %>");
+	$("#new-detail-modal").modal("hide");
+<% end %>

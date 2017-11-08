@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+ <div class="panel-heading">Ciudades</div>
+ <div class="panel-body">
+  <%= render partial: 'layouts/search_form', locals: { search_entity: 'ciudades', word: "Ciudades" } %>
+  <br>
+  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+   <a   >
+     <%= link_to  new_ciudade_path, remote: true, class: "btn btn-primary" do %>
+   <span class="glyphicon btn-glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Ciudades
+    <% end %>
+  
+   <%= link_to  new_departamento_path, remote: true , class: "btn btn-primary" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Departamento
+    <% end %>
+     </a>
+  </div>
+   <br>
+
+   <p>
+     
+   </p>
+  </div>
+  
+ </div>
+ <%= render partial: 'result_search' %>
+</div>

@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: insumos
+#
+#  id                 :integer          not null, primary key
+#  descripcion        :string(255)
+#  precio_compra      :integer
+#  precio_venta       :integer
+#  stock              :integer
+#  stock_minimo       :integer
+#  unidades_medida_id :integer
+#  proveedore_id      :integer
+#  tipo_iva_id        :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  precio_compra: 1
+  precio_venta: 1
+  stock: 1
+  stock_minimo: 1
+  unidades_medida: one
+  proveedore: one
+  tipo_iva: one
+
+two:
+  descripcion: MyString
+  precio_compra: 1
+  precio_venta: 1
+  stock: 1
+  stock_minimo: 1
+  unidades_medida: two
+  proveedore: two
+  tipo_iva: two

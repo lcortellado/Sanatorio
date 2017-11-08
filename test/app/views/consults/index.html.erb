@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+ <div class="panel panel-default">
+  <div class="panel-heading">Consultas</div>
+  <div class="panel-body">
+ 
+ <div class="col-md-5 col-md-offset-5 col-sm-5 col-sm-offset-5">
+      <p>
+        <%= button_to new_consult_path, {method: :get, class: "btn btn-success"} do %>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Registrar Nueva Consulta
+        <% end %>
+      </p>
+    </div>
+    
+    <table class="table">
+  <thead>
+    <tr>
+    
+      <th></th>
+      
+      <th>Turno numero</th>
+       <th>Nombre Paciente</th>
+        <th>Apellido Paciente</th>
+      <th>Tipo de Consulta</th>
+     
+     
+     
+       <th>Fecha Creacion</th>
+        <th>Fecha Modificacion</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consults.each do |consult| %>
+      <tr>
+        <td>
+          <%= button_to consult_path(consult), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"> </span> Ver
+          <% end %>
+        </td>
+          <td><%= consult.turno.turno_nro %></td>
+         <td><%= consult.turno.paciente.nombre %></td>
+         <td><%= consult.turno.paciente.apellido %></td>
+        <td><%= consult.tipo_consult.descripcion %></td>
+        <td><%= consult.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= consult.updated_at.strftime("%d/%m/%Y") %></td>
+        
+         <td> <%= button_to edit_consult_path(consult), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Editar
+          <% end %></td>
+       <td>
+          <%= button_to consult, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+ 

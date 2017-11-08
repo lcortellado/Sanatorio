@@ -1,0 +1,5 @@
+
+$("ul.errors").html("");
+
+$("#sale-details").html("<%= escape_javascript(render(partial: 'sales/table', locals: { sale: @sale, show_actions: true })) %>");
+$("#new-detail-modal").modal("hide");

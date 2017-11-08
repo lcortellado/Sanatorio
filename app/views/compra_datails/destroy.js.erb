@@ -1,0 +1,5 @@
+
+$("ul.errors").html("");
+
+$("#compra-details").html("<%= escape_javascript(render(partial: 'compras/table', locals: { compra: @compra, show_actions: true })) %>");
+$("#new-detail-modal").modal("hide");

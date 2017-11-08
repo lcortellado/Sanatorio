@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipo Ivas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Decripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_ivas.each do |tipo_iva| %>
+      <tr>
+        <td><%= tipo_iva.decripcion %></td>
+        <td><%= link_to 'Show', tipo_iva %></td>
+        <td><%= link_to 'Edit', edit_tipo_iva_path(tipo_iva) %></td>
+        <td><%= link_to 'Destroy', tipo_iva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo Iva', new_tipo_iva_path %>

@@ -1,0 +1,36 @@
+<table class="table">
+<table class="table">
+  <thead>
+    <tr>
+      <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+    </tr>
+    <tr>
+      <th>Descripcion</th>
+      <th>Fecha de Alta</th>
+      <th>Fecha de Modificación</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div id="brands">
+    <% @tipo_ivas.each do |tipo_iva| %>
+      <tr>
+        <td><%= tipo_iva.descripcion %></td>
+        <td><%= tipo_iva.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= tipo_iva.updated_at.strftime("%d/%m/%Y") %></td>
+        <td>
+          <%= button_to edit_tipo_iva_path(tipo_iva), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Editar
+          <% end %>
+        </td>
+        <td>
+          <%= button_to tipo_iva, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </div>
+  </tbody>
+</table>

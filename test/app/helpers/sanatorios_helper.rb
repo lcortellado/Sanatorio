@@ -1,0 +1,2 @@
+module SanatoriosHelper
+end

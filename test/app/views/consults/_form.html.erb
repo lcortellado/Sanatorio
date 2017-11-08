@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+ <%= form_with(model: consult, local: true) do |form| %>
+  <% if consult.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consult.errors.count, "error") %> prohibited this consult from being saved:</h2>
+
+      <ul>
+      <% consult.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :turno_id %>
+  </div>
+ <div class="col-xs-10">
+     <%= form.collection_select :turno_id, Turno.all, :id, :turno_nro, 
+                  {selected: @consult.turno_id, include_blank: 'Seleccione turno numero'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+  
+  <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :nombre_paciente_id %>
+  </div>
+ <div class="col-xs-10">
+     <%= form.collection_select :turno_id, Turno.all, :id, :paciente_id, 
+                  {selected: @consult.turno_id, include_blank: 'Seleccione turno numero'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+  
+  <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :tipo_conslta_id %>
+  </div>
+ <div class="col-xs-10">
+     <%= form.collection_select :tipo_consult_id, TipoConsult.all, :id, :descripcion, 
+                  {selected: @consult.tipo_consult_id, include_blank: 'Seleccione tipo de consultas'},
+                  {class: "form-control"} %>
+     
+    </div>
+  </div>
+
+ <div class="form-group row">
+<div class="col-xs-10">
+   <div class="col-xs-7">
+    </div>
+   <%= form.submit "Aceptar", class: "btn btn-success" %>
+   <%= link_to 'Cancelar', consults_path, class: "btn btn-success" %>
+   </div>
+    </div>
+<% end %>
+ </div>
+  </div>
+</div>

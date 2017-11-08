@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @dia.codigo %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @dia.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_dia_path(@dia) %> |
+<%= link_to 'Back', dias_path %>

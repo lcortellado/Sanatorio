@@ -1,0 +1,2 @@
+module DetallefactproveedoresHelper
+end

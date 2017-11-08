@@ -1,0 +1,174 @@
+
+
+</div>
+<div class="row">
+		    	<div class="col-md-12">
+		    		<div class="panel panel-default">
+		    			<div class="panel-heading">
+		    				<h3 class="panel-title"><strong>Detalles Consulta</strong></h3>
+		    			</div>
+		    			
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>CI:</strong>
+  </div>
+  <%= @historia_paciente.reserva.paciente.ci %>
+</address>
+ </div>
+ </div>	                                  		  
+				    			
+		    			
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Nombre:</strong>
+  </div>
+  <%= @historia_paciente.reserva.paciente.nombre %>  <%= @historia_paciente.reserva.paciente.apellido %>
+</address>
+ </div>
+ </div>		    			
+
+	  			
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Diagnostico:</strong>
+  </div>
+  <%= @historia_paciente.diagnostico %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Indicaciones:</strong>
+  </div>
+  <%= @historia_paciente.indicaciones %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Fecha proxima cita:</strong>
+  </div>
+  <%= @historia_paciente.fecha_proxima_cita %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Recomendaciones:</strong>
+  </div>
+  <%= @historia_paciente.recomendaciones %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Consult:</strong>
+  </div>
+  <%= @historia_paciente.reserva.nro %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Estudios:</strong>
+  </div>
+  <%= @historia_paciente.estudios %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Resultado Estudio:</strong>
+  </div>
+  <%= @historia_paciente.resultestudios %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Monto Consulta:</strong>
+  </div>
+  <%= @historia_paciente.precio %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Descuento:</strong>
+  </div>
+  <%= @historia_paciente.descuento %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+<div class="col-xs-6">
+
+<div class="col-xs-6">
+<address>
+  <strong>Total a Pagar:</strong>
+  </div>
+  <%= @historia_paciente.total %>
+</address>
+ </div>
+ </div>
+
+<div class="row">
+ <div class="col-xs-6">
+ </div>
+ <div class="col-xs-6">
+  <address>	    			
+  <%= link_to 'Volver', historia_pacientes_path, class: "btn btn-success" %>|
+  <%= link_to 'Editar', edit_historia_paciente_path(@historia_paciente), class: "btn btn-info" %> 
+
+ </address>
+	             </div>
+               </div>
+             </div>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+ </div>

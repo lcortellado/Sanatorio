@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Turno:</strong>
+  <%= @consult.turno %>
+</p>
+
+<p>
+  <strong>Tipo consult:</strong>
+  <%= @consult.tipo_consult %>
+</p>
+
+<%= link_to 'Edit', edit_consult_path(@consult) %> |
+<%= link_to 'Back', consults_path %>

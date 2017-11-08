@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: habitaciones
+#
+#  id          :integer          not null, primary key
+#  descripcion :string(255)
+#  nrohabit    :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  nrohabit: MyString
+
+two:
+  descripcion: MyString
+  nrohabit: MyString

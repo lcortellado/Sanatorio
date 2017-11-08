@@ -1,0 +1,7 @@
+<tr id="<%= departamento.id %>">
+  <td><%= departamento.codigo %></td>
+  <td><%= departamento.nombre %></td>
+  <td>
+    <%= link_to "Editar", edit_departamento_path(departamento), remote: true %>
+  </td>
+</tr>
