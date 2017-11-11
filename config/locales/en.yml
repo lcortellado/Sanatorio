@@ -30,11 +30,4 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
- number:
-     currency:
-        format:
-          unit: 'Gs. '
-          delimiter: '.'
-          separator: '.'
-          precision: 0
-          format: '%u%n'
+  hello: "Hello world"

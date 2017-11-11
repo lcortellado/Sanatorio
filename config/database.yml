@@ -9,14 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: control_sanays_development
+  database: sanatorio_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: control_sanasys_test
+  database: sanatorio_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -39,6 +39,6 @@ test:
 #
 production:
   <<: *default
-  database: control_sanasys
-  username: control_sanasys
+  database: sanatorio
+  username: sanatorio
   password: <%= ENV['DATABASE_URL'] %>
