@@ -1,9 +1,0 @@
-{
-  "name": "dsl-generated-dependencies",
-  "dependencies": {
-    "bootstrap-sass": "latest",
-    "typeahead.js": "latest"
-  },
-  "resolutions": {
-  }
-}

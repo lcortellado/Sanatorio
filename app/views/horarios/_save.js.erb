@@ -1,9 +1,0 @@
-$("ul.errors").html("");
-<% if @horarios.last.errors.any? %>
-	<% @horarios.last.errors.full_messages.each do |message| %>
-		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
-	<% end %>
-<% else %>
-	$("#horarios").html("<%= escape_javascript(render(partial: 'horarios/table', locals: { horario: @horario, show_actions: true })) %>");
-	$("#new-detail-modal").modal("hide");
-<% end %>

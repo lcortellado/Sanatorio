@@ -1,9 +1,0 @@
-<% if @insumo.errors.empty? %>
-  // add the row to the table, show alert and hide modal
-  $('table tbody').append(' <%= j render "row", ciudade: @ciudade %>');
-  $('.alert-success').html("Producto ha sido creado con éxito").show();
-  $('#insumo-modal').modal('hide');
-<% else %>
-  // show first error
-  alert('<%= @insumo.errors.full_messages[0] %>');
-<% end %>

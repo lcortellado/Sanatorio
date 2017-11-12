@@ -1,9 +1,0 @@
-$("ul.errors").html("");
-<% if @insumos.last.errors.any? %>
-	<% @insumos.last.errors.full_messages.each do |message| %>
-		$("ul.errors").append($("<li />").html(" <%= message.html_safe %> "));
-	<% end %>
-<% else %>
-	$("#insumos").html("<%= escape_javascript(render(partial: 'insumos/table', locals: { insumo: @insumo, show_actions: true })) %>");
-	$("#new-detail-modal").modal("hide");
-<% end %>

@@ -1,2 +1,0 @@
-module DetallefactproveedoresHelper
-end

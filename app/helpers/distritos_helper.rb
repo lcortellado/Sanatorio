@@ -1,2 +1,0 @@
-module DistritosHelper
-end
