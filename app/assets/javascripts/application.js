@@ -10,6 +10,21 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery-ui
+//= require jquery_ujs
+
 //= require turbolinks
-//= require_tree .
+//= require 'bootstrap-sass'
+//= require cocoon
+//= require bootstrap-modal
+//= require bootstrap-modalmanager
+
+
+
+
+var i = 0;
+$(document).on("turbolinks:reload", function () {
+console.log(i++);
+})
+

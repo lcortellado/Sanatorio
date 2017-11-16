@@ -1,0 +1,36 @@
+<table class="table">
+ <thead>
+  
+  <tr>
+   <th></th>
+   
+   <th>Tabla</th>
+   <th>Accion</th>
+   <th>Descripcion</th>
+    <th>Fecha</th>
+    <th>Responsable</th>
+   <th colspan="2"></th>
+  </tr>
+ 
+ </thead>
+
+ <tbody>
+  <div id="especialidades">
+   <% @audits.each do |audit| %>
+    <tr>
+   
+  
+     <td><%= audit.auditable_id %></td>
+     <td><%= audit.auditable_type %></td>
+     <td><%= audit.action %></td>
+      <td><%= audit.audited_changes %></td>
+       <td><%= audit.created_at.strftime("%d/%m/%Y") %></td>
+      <td><%= audit.user.email %></td>
+    
+     
+    </tr>
+   <% end %>
+  </div>
+ </tbody>
+ 
+</table>

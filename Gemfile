@@ -4,7 +4,24 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'devise'
+gem 'backup-rails'
+gem 'annotate'
+gem 'bower-rails'
+gem 'prawn'
+gem 'prawn-table'
+gem 'responders'
+gem 'jquery-rails'
+gem 'audited', '~> 4.5'
+gem 'jquery-ui-rails'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+# Modal
+gem 'bootstrap-modal-rails'
+gem 'receipts'
+gem 'auto_complete'
+# Nested forms
+gem 'cocoon'
 group :development do
   gem 'mysql2'
 end
