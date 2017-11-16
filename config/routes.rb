@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :departamentos
+  resources :regiones
   resources :audits
   devise_for :users
   resources :especialidades
