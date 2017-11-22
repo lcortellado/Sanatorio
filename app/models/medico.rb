@@ -25,7 +25,9 @@ class Medico < ApplicationRecord
     has_many :horarios
     belongs_to :ciudade
     has_many :reservas
+    has_many :sexos
      def completo
          "#{nombre}" +".."+"#{apellido}"
   end
+    audited
 end

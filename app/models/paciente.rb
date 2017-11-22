@@ -23,7 +23,9 @@ class Paciente < ApplicationRecord
     belongs_to :ciudade
     has_many :sales
     has_many :ventas
+    has_many :sexos
     def completo
          "#{nombre}" +".."+ "#{apellido}"
   end
+    audited
 end

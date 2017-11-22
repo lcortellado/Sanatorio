@@ -11,78 +11,37 @@
     </div>
   <% end %>
 
-  <div class="form-group row">
-  <div class="col-xs-3">
+  <div class="field">
     <%= form.label :codigo %>
-     </div>
-    <div class="col-xs-3">
-    <%= form.text_field :codigo, autofocus: true, placeholder: "", class: "form-control"  %>
-  </div>
+    <%= form.text_field :codigo, id: :horario_codigo %>
   </div>
 
-  <div class="form-group row">
-  <div class="col-xs-3">
-  <%= form.label :medico_id %>
-  </div>
- <div class="col-xs-5">
-     <%= form.collection_select :medico_id, Medico.all, :id, :completo, 
-                  {selected: @horario.medico_id, include_blank: 'Seleccione medico'},
-                  {class: "form-control"} %>
-     
-    </div>
-     <%= link_to  new_medico_path, remote: true, class: "btn btn-success" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> 
-    <% end %>
+  <div class="field">
+    <%= form.label :medico_id %>
+    <%= form.text_field :medico_id, id: :horario_medico_id %>
   </div>
 
-  <div class="form-group row">
-  <div class="col-xs-3">
-  <%= form.label :dia_id %>
-  </div>
- <div class="col-xs-5">
-     <%= form.collection_select :dia_id, Dia.all, :id, :nombre, 
-                  {selected: @horario.dia_id, include_blank: 'Seleccione dia'},
-                  {class: "form-control"} %>
-     
-    </div>
-     <%= link_to  new_dia_path, remote: true, class: "btn btn-success" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> 
-    <% end %>
+  <div class="field">
+    <%= form.label :dia_id %>
+    <%= form.text_field :dia_id, id: :horario_dia_id %>
   </div>
 
- <div class="form-group row">
-  <div class="col-xs-3">
+  <div class="field">
     <%= form.label :horadesde %>
-     </div>
-    <div class="col-xs-5">
-    <%= form.time_select :horadesde, autofocus: true, placeholder: "", class: "form-control"  %>
-  </div>
+    <%= form.time_select :horadesde, id: :horario_horadesde %>
   </div>
 
- <div class="form-group row">
-  <div class="col-xs-3">
+  <div class="field">
     <%= form.label :horahasta %>
-     </div>
-    <div class="col-xs-5">
-    <%= form.time_select :horahasta, autofocus: true, placeholder: "", class: "form-control"  %>
-  </div>
+    <%= form.time_select :horahasta, id: :horario_horahasta %>
   </div>
 
-  <div class="form-group row">
-  <div class="col-xs-3">
+  <div class="field">
     <%= form.label :fecha %>
-     </div>
-    <div class="col-xs-2">
-    <%= form.date_field :fecha, autofocus: true, placeholder: "", class: "form-control"  %>
-  </div>
+    <%= form.date_select :fecha, id: :horario_fecha %>
   </div>
 
-   <div class="form-group row">
-    <div class="col-xs-10">
-       <div class="col-xs-7">
-    </div>
-   <%= form.submit "Aceptar", class: "btn btn-success" %>
-   <%= link_to 'Cancelar', horarios_path, class: "btn btn-success" %>
-        </div>
-      </div>
-     <% end %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

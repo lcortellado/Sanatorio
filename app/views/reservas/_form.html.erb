@@ -11,81 +11,41 @@
     </div>
   <% end %>
 
-
-   <div class="modal-body">
-  <div class="form-group row">
-  <div class="col-xs-2">
+  <div class="field">
     <%= form.label :codigo %>
-     </div>
- <div class="col-xs-6">
-    <%= form.text_field :codigo, autofocus: true, placeholder: "", class: "form-control" %>
- 
- </div>
+    <%= form.text_field :codigo, id: :reserva_codigo %>
   </div>
-  
-  <div class="form-group row">
-  <div class="col-xs-2">
-    <%= form.label :Numero %>
-     </div>
- <div class="col-xs-6">
-    <%= form.text_field :nro, autofocus: true, placeholder: "", class: "form-control" %>
- 
- </div>
+
+  <div class="field">
+    <%= form.label :nro %>
+    <%= form.number_field :nro, id: :reserva_nro %>
   </div>
-<div class="form-group row">
-   <div class="col-xs-2">
+
+  <div class="field">
     <%= form.label :asunto %>
-     </div>
- <div class="col-xs-6">
-    <%= form.text_field :asunto,class: "form-control" %>
+    <%= form.text_field :asunto, id: :reserva_asunto %>
   </div>
-  </div>
-   <div class="form-group row">
-   <div class="col-xs-2">
-  <%= form.label :Paciente_id %>
-  </div>
- <div class="col-xs-6">
-     <%= form.collection_select :paciente_id, Paciente.all, :id, :completo, 
-                  {selected: @reserva.paciente_id, include_blank: 'Seleccione Paciente'},
-                  {class: "form-control"} %>
-     
-    </div>
-       <%= link_to  new_paciente_path, remote: true, class: "btn btn-primary" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Paciete
-    <% end %>
-       </div>
 
-    <div class="form-group row">
-   <div class="col-xs-2">
-  <%= form.label :Medico_id %>
+  <div class="field">
+    <%= form.label :paciente_id %>
+    <%= form.text_field :paciente_id, id: :reserva_paciente_id %>
   </div>
- <div class="col-xs-6">
-     <%= form.collection_select :medico_id, Medico.all, :id, :completo, 
-                  {selected: @reserva.medico_id, include_blank: 'Seleccione medico'},
-                  {class: "form-control"} %>
-     
-    </div>
-      <%= link_to  new_medico_path, remote: true, class: "btn btn-primary" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Paciete
-    <% end %>
-       </div>
 
-  <div class="form-group row">
-   <div class="col-xs-2">
+  <div class="field">
+    <%= form.label :medico_id %>
+    <%= form.text_field :medico_id, id: :reserva_medico_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :fecha %>
-      </div>
- <div class="col-xs-6">
-    <%= form.date_field :fecha, id: :reserva_fecha %>
+    <%= form.date_select :fecha, id: :reserva_fecha %>
   </div>
-  </div>
-<div class="form-group row">
-   <div class="col-xs-2">
+
+  <div class="field">
     <%= form.label :hora %>
-     </div>
- <div class="col-xs-6">
     <%= form.time_select :hora, id: :reserva_hora %>
   </div>
-  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -17,7 +17,7 @@ class MedicosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create medico" do
     assert_difference('Medico.count') do
-      post medicos_url, params: { medico: { apellido: @medico.apellido, celular: @medico.celular, ci: @medico.ci, ciudade_id: @medico.ciudade_id, contacto_familiar: @medico.contacto_familiar, correo: @medico.correo, direccion: @medico.direccion, especialidade_id: @medico.especialidade_id, fecha_naci: @medico.fecha_naci, nombre: @medico.nombre, nro_registro: @medico.nro_registro, sexo: @medico.sexo, telefono: @medico.telefono } }
+      post medicos_url, params: { medico: { apellido: @medico.apellido, celular: @medico.celular, ci: @medico.ci, ciudade_id: @medico.ciudade_id, contacto_familiar: @medico.contacto_familiar, correo: @medico.correo, direccion: @medico.direccion, especialidade_id: @medico.especialidade_id, fecha_naci: @medico.fecha_naci, nombre: @medico.nombre, nro_registro: @medico.nro_registro, sexo_id: @medico.sexo_id, telefono: @medico.telefono } }
     end
 
     assert_redirected_to medico_url(Medico.last)
@@ -34,7 +34,7 @@ class MedicosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update medico" do
-    patch medico_url(@medico), params: { medico: { apellido: @medico.apellido, celular: @medico.celular, ci: @medico.ci, ciudade_id: @medico.ciudade_id, contacto_familiar: @medico.contacto_familiar, correo: @medico.correo, direccion: @medico.direccion, especialidade_id: @medico.especialidade_id, fecha_naci: @medico.fecha_naci, nombre: @medico.nombre, nro_registro: @medico.nro_registro, sexo: @medico.sexo, telefono: @medico.telefono } }
+    patch medico_url(@medico), params: { medico: { apellido: @medico.apellido, celular: @medico.celular, ci: @medico.ci, ciudade_id: @medico.ciudade_id, contacto_familiar: @medico.contacto_familiar, correo: @medico.correo, direccion: @medico.direccion, especialidade_id: @medico.especialidade_id, fecha_naci: @medico.fecha_naci, nombre: @medico.nombre, nro_registro: @medico.nro_registro, sexo_id: @medico.sexo_id, telefono: @medico.telefono } }
     assert_redirected_to medico_url(@medico)
   end
 

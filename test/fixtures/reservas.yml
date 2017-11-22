@@ -6,8 +6,8 @@ one:
   asunto: MyString
   paciente: one
   medico: one
-  fecha: 2017-11-17
-  hora: 2017-11-17 13:45:16
+  fecha: 2017-11-20
+  hora: 2017-11-20 13:41:43
 
 two:
   codigo: MyString
@@ -15,5 +15,5 @@ two:
   asunto: MyString
   paciente: two
   medico: two
-  fecha: 2017-11-17
-  hora: 2017-11-17 13:45:16
+  fecha: 2017-11-20
+  hora: 2017-11-20 13:41:43

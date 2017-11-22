@@ -7,7 +7,7 @@ one:
   reserva: one
   estudios: MyString
   resultestudios: MyString
-  fecha_proxima_cita: 2017-11-17
+  fecha_proxima_cita: 2017-11-20
   recomendaciones: MyString
   precio: 1
   descuento: 1
@@ -20,7 +20,7 @@ two:
   reserva: two
   estudios: MyString
   resultestudios: MyString
-  fecha_proxima_cita: 2017-11-17
+  fecha_proxima_cita: 2017-11-20
   recomendaciones: MyString
   precio: 1
   descuento: 1

@@ -4,14 +4,14 @@ one:
   codigo: MyString
   medico: one
   dia: one
-  horadesde: 2017-11-19 15:18:07
-  horahasta: 2017-11-19 15:18:07
-  fecha: 2017-11-19
+  horadesde: 2017-11-20 13:36:12
+  horahasta: 2017-11-20 13:36:12
+  fecha: 2017-11-20
 
 two:
   codigo: MyString
   medico: two
   dia: two
-  horadesde: 2017-11-19 15:18:07
-  horahasta: 2017-11-19 15:18:07
-  fecha: 2017-11-19
+  horadesde: 2017-11-20 13:36:12
+  horahasta: 2017-11-20 13:36:12
+  fecha: 2017-11-20

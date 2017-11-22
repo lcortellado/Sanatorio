@@ -124,11 +124,15 @@
    <th>
   <div class="form-group row">
   <div class="col-xs-3">
-    <%= form.label :sexo %>
-     </div>
-    <div class="col-xs-7">
-    <%= form.text_field :sexo, autofocus: true, placeholder: "Sexo", class: "form-control"  %>
+    <%= form.label :Sexo %>
   </div>
+ <div class="col-xs-3">
+     <%= form.collection_select :sexo_id, Sexo.all, :id, :nombre, 
+                  {selected: @paciente.sexo_id, include_blank: ''},
+                  {class: "form-control"} %>
+     
+    </div>
+     
   </div>
  </th>
 

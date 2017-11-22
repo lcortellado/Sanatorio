@@ -1,6 +1,5 @@
 class EspecialidadesController < ApplicationController
-    load_and_authorize_resource
-    before_action :set_especialidade, only: [:show, :edit, :update, :destroy]
+  before_action :set_especialidade, only: [:show, :edit, :update, :destroy]
 
   # GET /especialidades
   # GET /especialidades.json

@@ -9,23 +9,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-   
+    
    
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>" id="<%= controller_name %>-<%= action_name %>">
    <p id="notice"></p>
-  
-    
-    <% if current_user %>
-    <%  current_user.role== 'admin' %>
+   <% if current_user %>
+<%  current_user.name == 'admin' %>
     <%= render 'layouts/topbaradmin' %>
-    <% else if current_user %>
-     <%= render 'layouts/topbar' %>
       <% else   %>
         <%= render 'layouts/topbar' %>
-       <% end%>
-   <% end %>
+         <% end%>
     </br>
     </br>
     </br>
@@ -34,12 +29,10 @@
     
  <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>
-  
+   
    
     <%= yield %>
    
     </div>
   </div> 
      
-</body>
-</html>

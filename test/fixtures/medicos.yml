@@ -5,27 +5,27 @@ one:
   nro_registro: MyString
   nombre: MyString
   apellido: MyString
-  sexo: false
+  sexo: one
+  ciudade: one
   direccion: MyString
   telefono: MyString
   celular: MyString
-  fecha_naci: 2017-11-17
+  fecha_naci: 2017-11-20
   correo: MyString
   contacto_familiar: MyString
   especialidade: one
-  ciudade: one
 
 two:
   ci: MyString
   nro_registro: MyString
   nombre: MyString
   apellido: MyString
-  sexo: false
+  sexo: two
+  ciudade: two
   direccion: MyString
   telefono: MyString
   celular: MyString
-  fecha_naci: 2017-11-17
+  fecha_naci: 2017-11-20
   correo: MyString
   contacto_familiar: MyString
   especialidade: two
-  ciudade: two

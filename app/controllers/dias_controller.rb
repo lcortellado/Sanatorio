@@ -4,12 +4,8 @@ class DiasController < ApplicationController
   # GET /dias
   # GET /dias.json
   def index
-    @dias = if params[:query].present?
-      Dia.where(params[:query])
-    else
-      Dia.all
-    end
-    end
+    @dias = Dia.all
+  end
 
   # GET /dias/1
   # GET /dias/1.json
@@ -64,11 +60,7 @@ class DiasController < ApplicationController
       format.json { head :no_content }
     end
   end
-def autocomplete
-  render json: Dia.search(params[:query], autocomplete: false, limit: 10).map do |dia|
-    { title: dia.nombre, value: dia.id }
-  end
-end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dia
@@ -77,6 +69,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dia_params
-      params.require(:dia).permit(:codigo, :nombre)
+      params.require(:dia).permit(:ncodigo, :nombre)
     end
 end

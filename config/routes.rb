@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
- 
- 
-  resources :horarios
-get 'send' => 'send#index'
-post 'send' => 'send#create'
-  resources :admins
   resources :historial_pacientes
   resources :reservas
-  resources :pacientes
+  resources :horarios
   resources :dias
+  resources :pacientes
   resources :medicos
+  resources :sexos
+  resources :admins
   resources :ciudades
   resources :departamentos
   resources :regiones

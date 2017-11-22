@@ -10,19 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-
 
 //= require turbolinks
 //= require 'bootstrap-sass'
 //= require cocoon
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
-//= require 'typeahead.js.js'
-//= require 'typeahead'
 
 
 
