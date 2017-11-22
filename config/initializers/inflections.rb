@@ -12,10 +12,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
        inflect.irregular 'cita', 'citas'
     inflect.irregular 'venta', 'ventas'
      inflect.irregular 'horario', 'horarios'
-    inflect.irregular 'sexo', 'sexos'
    inflect.uncountable %w( fish sheep )
  end
-
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'

@@ -12,7 +12,13 @@
   <% end %>
 
 
-   
+   <div class="modal-body">
+  <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :codigo %>
+     </div>
+ <div class="col-xs-6">
+    <%= form.text_field :codigo, autofocus: true, placeholder: "", class: "form-control" %>
  
  </div>
   </div>
@@ -21,7 +27,7 @@
   <div class="col-xs-2">
     <%= form.label :Numero %>
      </div>
- <div class="col-xs-4">
+ <div class="col-xs-6">
     <%= form.text_field :nro, autofocus: true, placeholder: "", class: "form-control" %>
  
  </div>
@@ -45,7 +51,7 @@
      
     </div>
        <%= link_to  new_paciente_path, remote: true, class: "btn btn-primary" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Paciete
     <% end %>
        </div>
 
@@ -59,12 +65,9 @@
                   {class: "form-control"} %>
      
     </div>
-      <% if can? :create, @medico %>
       <%= link_to  new_medico_path, remote: true, class: "btn btn-primary" do %> 
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> 
-   
-       <% end %>
-        <% end %>
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Paciete
+    <% end %>
        </div>
 
   <div class="form-group row">
@@ -83,15 +86,7 @@
     <%= form.time_select :hora, id: :reserva_hora %>
   </div>
   </div>
-  <div class="form-group row">
-    <div class="col-xs-10">
-       <div class="col-xs-7">
-    </div>
-   <%= form.submit "Aceptar", class: "btn btn-success" %>
-   <%= link_to 'Cancelar', reservas_path, class: "btn btn-success" %>
-        </div>
-      </div>
-    <% end %>
-    </div>
+  <div class="actions">
+    <%= form.submit %>
   </div>
-</div>
+<% end %>

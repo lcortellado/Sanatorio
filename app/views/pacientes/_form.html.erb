@@ -124,19 +124,15 @@
    <th>
   <div class="form-group row">
   <div class="col-xs-3">
-    <%= form.label :Sexo %>
+    <%= form.label :sexo %>
+     </div>
+    <div class="col-xs-7">
+    <%= form.text_field :sexo, autofocus: true, placeholder: "Sexo", class: "form-control"  %>
   </div>
- <div class="col-xs-6">
-     <%= form.collection_select :sexo_id, Sexo.all, :id, :nombre, 
-                  {selected: @paciente.sexo_id, include_blank: 'Genero'},
-                  {class: "form-control"} %>
-     
-    </div>
-     
   </div>
  </th>
 
-  
+ 
    <div class="form-group row">
   <div class="col-xs-2">
   <%= form.label :Ciudad_id %>
@@ -147,11 +143,9 @@
                   {class: "form-control"} %>
      
     </div>
-    <% if can? :create, @medico %>
      <%= link_to  new_ciudade_path, remote: true, class: "btn btn-success" do %> 
    <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> 
     <% end %>
-      <% end %>
   </div>
    
     </thead>

@@ -17,7 +17,7 @@ class DiasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create dia" do
     assert_difference('Dia.count') do
-      post dias_url, params: { dia: { ncodigo: @dia.ncodigo, nombre: @dia.nombre } }
+      post dias_url, params: { dia: { codigo: @dia.codigo, nombre: @dia.nombre } }
     end
 
     assert_redirected_to dia_url(Dia.last)
@@ -34,7 +34,7 @@ class DiasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update dia" do
-    patch dia_url(@dia), params: { dia: { ncodigo: @dia.ncodigo, nombre: @dia.nombre } }
+    patch dia_url(@dia), params: { dia: { codigo: @dia.codigo, nombre: @dia.nombre } }
     assert_redirected_to dia_url(@dia)
   end
 

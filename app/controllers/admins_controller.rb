@@ -1,11 +1,9 @@
-class AdminsController < ApplicationController
+class AdminsController < InheritedResources::Base
+
   private
 
     def admin_params
       params.require(:admin).permit()
     end
-    
-    def index
-    @especialidades = Especialidade.all
-    end
 end
+

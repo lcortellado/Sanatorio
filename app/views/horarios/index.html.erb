@@ -1,14 +1,4 @@
-<div class="form-group row">
-    <div class="col-xs-10">
-       <div class="col-xs-7">
-    </div>
-  <% if can? :create, @horario %>
-<%= link_to 'Nuevo Horario', new_horario_path, class: "btn btn-primary" %>
-  <% else%>
-  <%= link_to 'Reservar', new_reserva_path, class: "btn btn-primary" %>
- <% end %>
- </div>
-      </div>
+<p id="notice"><%= notice %></p>
 
 <h1>Horarios</h1>
 
@@ -18,9 +8,8 @@
       <th>Codigo</th>
       <th>Medico</th>
       <th>Dia</th>
-            <th>Especialdiad</th>
-      <th>Horadesde</th>
-      <th>Horahasta</th>
+      <th>Horario de Atencion Desde</th>
+      <th>Horario de Atencion Hasta</th>
       <th>Fecha</th>
       <th colspan="3"></th>
     </tr>
@@ -30,11 +19,10 @@
     <% @horarios.each do |horario| %>
       <tr>
         <td><%= horario.codigo %></td>
-        <td><%= horario.medico.completo %></td>
-        <td><%= horario.dia.nombre %></td>
-          <td><%= horario.medico.especialidade.descripcion %></td>
-        <td><%= horario.horadesde.strftime("%R") %></td>
-        <td><%= horario.horahasta.strftime("%R") %></td>
+        <td><%= horario.medico %></td>
+        <td><%= horario.dia %></td>
+        <td><%= horario.horadesde %></td>
+        <td><%= horario.horahasta %></td>
         <td><%= horario.fecha %></td>
         <td><%= link_to 'Ver', horario %></td>
         <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
@@ -45,6 +33,9 @@
 </table>
 
 <br>
-  <% if can? :create, @horario %>
-<%= link_to 'Nuevo Horario', new_horario_path %>
-  <% end %>
+
+ <%= link_to  new_horario_path, remote: true, class: "btn btn-primary" do %>
+     
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nueva 
+    <% end %>
+    

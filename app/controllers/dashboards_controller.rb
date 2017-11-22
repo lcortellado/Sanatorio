@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-load_and_authorize_resource :except => [ :show]
-    def index
+ def index
+     @especialidades= Especialidade.all
   end
 end

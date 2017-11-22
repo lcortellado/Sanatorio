@@ -4,24 +4,24 @@ one:
   ci: MyString
   nombre: MyString
   apellido: MyString
-  sexo: one
-  ciudade: one
+  sexo: false
   direccion: MyString
   telefono: MyString
   celular: MyString
-  fecha_naci: 2017-11-20
+  fecha_naci: 2017-11-17
   correo: MyString
   contacto_familiar: MyString
+  ciudade: MyString
 
 two:
   ci: MyString
   nombre: MyString
   apellido: MyString
-  sexo: two
-  ciudade: two
+  sexo: false
   direccion: MyString
   telefono: MyString
   celular: MyString
-  fecha_naci: 2017-11-20
+  fecha_naci: 2017-11-17
   correo: MyString
   contacto_familiar: MyString
+  ciudade: MyString

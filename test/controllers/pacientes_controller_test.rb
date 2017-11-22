@@ -17,7 +17,7 @@ class PacientesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create paciente" do
     assert_difference('Paciente.count') do
-      post pacientes_url, params: { paciente: { apellido: @paciente.apellido, celular: @paciente.celular, ci: @paciente.ci, ciudade_id: @paciente.ciudade_id, contacto_familiar: @paciente.contacto_familiar, correo: @paciente.correo, direccion: @paciente.direccion, fecha_naci: @paciente.fecha_naci, nombre: @paciente.nombre, sexo_id: @paciente.sexo_id, telefono: @paciente.telefono } }
+      post pacientes_url, params: { paciente: { apellido: @paciente.apellido, celular: @paciente.celular, ci: @paciente.ci, ciudade: @paciente.ciudade, contacto_familiar: @paciente.contacto_familiar, correo: @paciente.correo, direccion: @paciente.direccion, fecha_naci: @paciente.fecha_naci, nombre: @paciente.nombre, sexo: @paciente.sexo, telefono: @paciente.telefono } }
     end
 
     assert_redirected_to paciente_url(Paciente.last)
@@ -34,7 +34,7 @@ class PacientesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update paciente" do
-    patch paciente_url(@paciente), params: { paciente: { apellido: @paciente.apellido, celular: @paciente.celular, ci: @paciente.ci, ciudade_id: @paciente.ciudade_id, contacto_familiar: @paciente.contacto_familiar, correo: @paciente.correo, direccion: @paciente.direccion, fecha_naci: @paciente.fecha_naci, nombre: @paciente.nombre, sexo_id: @paciente.sexo_id, telefono: @paciente.telefono } }
+    patch paciente_url(@paciente), params: { paciente: { apellido: @paciente.apellido, celular: @paciente.celular, ci: @paciente.ci, ciudade: @paciente.ciudade, contacto_familiar: @paciente.contacto_familiar, correo: @paciente.correo, direccion: @paciente.direccion, fecha_naci: @paciente.fecha_naci, nombre: @paciente.nombre, sexo: @paciente.sexo, telefono: @paciente.telefono } }
     assert_redirected_to paciente_url(@paciente)
   end
 

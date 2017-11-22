@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Tesis/respaldo/sanasys/bower_components/jquery/src/core/ready-no-deferred.js",
+        "C:/Tesis/respaldo/sanasys/bower_components/bootstrap/js/dropdown.js"
+    ]
+}

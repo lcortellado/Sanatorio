@@ -9,39 +9,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+   
    
   </head>
-  
 
   <body class="<%= controller_name %> <%= action_name %>" id="<%= controller_name %>-<%= action_name %>">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %> alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <%= value %>
-    </div>
-<% end %>
-   
- <%  if  user_signed_in? and current_user.name == 'admin' %>
+   <p id="notice"></p>
+  
+    
+    <% if current_user %>
+    <%  current_user.role== 'admin' %>
     <%= render 'layouts/topbaradmin' %>
-        <%  else if  user_signed_in? %>
-         <%= render 'layouts/topbar' %>
-        <% else  %>
-         <%= render 'layouts/topbar' %>
-        <% end%>
-          <% end%>
-        
-            
+    <% else if current_user %>
+     <%= render 'layouts/topbar' %>
+      <% else   %>
+        <%= render 'layouts/topbar' %>
+       <% end%>
+   <% end %>
     </br>
     </br>
     </br>
     </br>
      
- 
-   
+    
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+  
    
     <%= yield %>
    
     </div>
   </div> 
      
+</body>
+</html>

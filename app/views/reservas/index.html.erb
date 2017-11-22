@@ -21,12 +21,12 @@
   <tbody>
     <% @reservas.each do |reserva| %>
       <tr>
-        <td><%= reserva.id %></td>
+        <td><%= reserva.codigo %></td>
         <td><%= reserva.asunto %></td>
         <td><%= reserva.nro %></td>
         <td><%= reserva.paciente.completo %></td>
         <td><%= reserva.medico.completo %></td>
-        <td><%= reserva.fecha.strftime("%d/%m/%Y") %></td>
+        <td><%= reserva.fecha.strftime("%R") %></td>
         <td><%= reserva.hora.strftime("%R") %></td>
          <td><%= reserva.created_at.strftime("%d/%m/%Y") %></td>
         <td><%= reserva.updated_at.strftime("%d/%m/%Y") %></td>

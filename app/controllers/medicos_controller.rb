@@ -1,5 +1,5 @@
 class MedicosController < ApplicationController
-load_and_authorize_resource :except => [:index, :show]
+  before_action :set_medico, only: [:show, :edit, :update, :destroy]
 
   # GET /medicos
   # GET /medicos.json

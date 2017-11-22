@@ -1,4 +1,12 @@
 
+
+
+<div class="jumbotron">
+  <h1>BIENVENIDO a su Sanatorio de confianza!
+
+</div>
+
+
 <section class="section-white">
   <div class="container">
 
@@ -61,11 +69,42 @@
 	    </div>
 	</div>
     
-    
-<div class="jumbotron">
-  <h1>BIENVENIDO a su Sanatorio de confianza!
+    <div align="center">
+    <table class="table" >
+ <thead>
+  
+  <tr>
+   <th></th>
+   
+   <th>Especialidades Medicas</th>
+  
+   <th colspan="2"></th>
+  </tr>
+ 
+ </thead>
 
-</div>
+ <tbody>
+  <div >
+   <% @especialidades.each do |especialidade| %>
+    <tr>
+    <td>
+         
+        </td>
+  
+     <td><%= especialidade.descripcion %></td>
+    
+     
+    
+    
+    
+    </tr>
+   <% end %>
+  </div>
+ </tbody>
+ 
+</table>
+  </div>  
+    
 		<style>
                                         
 #myFooter {
@@ -199,9 +238,8 @@ html{
                     <h5>Comience</h5>
                     <ul>
                         <li><%= link_to 'Inicio', root_path %></li>
-                        <li><%= link_to 'Registrarse', new_user_registration_path %></li>
-                        
-                        <li><%= link_to "Imprimir Lista de Profesionales (PDF)", medicos_path(@medicos, format: 'pdf') %></li>
+                        <li><a href="#">Registrarse</a></li>
+                        <li><a href="#">Descargar Lista de Medicos</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">

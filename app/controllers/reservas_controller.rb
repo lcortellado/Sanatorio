@@ -1,5 +1,6 @@
 class ReservasController < ApplicationController
-  
+  before_action :set_reserva, only: [:show, :edit, :update, :destroy]
+
   # GET /reservas
   # GET /reservas.json
   def index
@@ -9,6 +10,7 @@ class ReservasController < ApplicationController
   # GET /reservas/1
   # GET /reservas/1.json
   def show
+    @reserva = Reserva.find(params[:id])
   end
 
   # GET /reservas/new
@@ -27,7 +29,7 @@ class ReservasController < ApplicationController
 
     respond_to do |format|
       if @reserva.save
-        format.html { redirect_to reservas_url }
+        format.html { redirect_to reservas_url, notice: 'Reserva was successfully created.' }
         format.json { render :show, status: :created, location: @reserva }
       else
         format.html { render :new }
@@ -41,7 +43,7 @@ class ReservasController < ApplicationController
   def update
     respond_to do |format|
       if @reserva.update(reserva_params)
-        format.html { redirect_to @reserva, notice: 'Reserva was successfully updated.' }
+        format.html { redirect_to reservas_url, notice: 'Reserva was successfully updated.' }
         format.json { render :show, status: :ok, location: @reserva }
       else
         format.html { render :edit }
@@ -68,6 +70,6 @@ class ReservasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserva_params
-      params.require(:reserva).permit(:codigo, :nro, :asunto, :paciente_id, :medico_id, :fecha, :hora)
+      params.require(:reserva).permit(:codigo, :asunto, :paciente_id, :medico_id, :fecha, :hora, :nro)
     end
 end
