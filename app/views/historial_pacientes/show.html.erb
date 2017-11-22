@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @historial_paciente.codigo %>
+</p>
+
+<p>
+  <strong>Diagnostico:</strong>
+  <%= @historial_paciente.diagnostico %>
+</p>
+
+<p>
+  <strong>Indicaciones:</strong>
+  <%= @historial_paciente.indicaciones %>
+</p>
+
+<p>
+  <strong>Reserva:</strong>
+  <%= @historial_paciente.reserva %>
+</p>
+
+<p>
+  <strong>Estudios:</strong>
+  <%= @historial_paciente.estudios %>
+</p>
+
+<p>
+  <strong>Resultestudios:</strong>
+  <%= @historial_paciente.resultestudios %>
+</p>
+
+<p>
+  <strong>Fecha proxima cita:</strong>
+  <%= @historial_paciente.fecha_proxima_cita %>
+</p>
+
+<p>
+  <strong>Recomendaciones:</strong>
+  <%= @historial_paciente.recomendaciones %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @historial_paciente.precio %>
+</p>
+
+<p>
+  <strong>Descuento:</strong>
+  <%= @historial_paciente.descuento %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @historial_paciente.total %>
+</p>
+
+<%= link_to 'Edit', edit_historial_paciente_path(@historial_paciente) %> |
+<%= link_to 'Back', historial_pacientes_path %>

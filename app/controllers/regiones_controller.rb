@@ -28,7 +28,7 @@ class RegionesController < ApplicationController
 
     respond_to do |format|
       if @regione.save
-        format.html { redirect_to @regione, notice: 'Regione was successfully created.' }
+        format.html { redirect_to regiones_url, notice: 'Regione was successfully created.' }
         format.json { render :show, status: :created, location: @regione }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class RegionesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def regione_params
-      params.require(:regione).permit(:codigo, :nombre)
+      params.require(:regione).permit(:nombre, :codigo)
     end
 end

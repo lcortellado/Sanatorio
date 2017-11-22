@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
- def index
+load_and_authorize_resource :except => [ :show]
+    def index
   end
 end

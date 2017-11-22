@@ -1,0 +1,50 @@
+<div class="form-group row">
+    <div class="col-xs-10">
+       <div class="col-xs-7">
+    </div>
+  <% if can? :create, @horario %>
+<%= link_to 'Nuevo Horario', new_horario_path, class: "btn btn-primary" %>
+  <% else%>
+  <%= link_to 'Reservar', new_reserva_path, class: "btn btn-primary" %>
+ <% end %>
+ </div>
+      </div>
+
+<h1>Horarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Medico</th>
+      <th>Dia</th>
+            <th>Especialdiad</th>
+      <th>Horadesde</th>
+      <th>Horahasta</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @horarios.each do |horario| %>
+      <tr>
+        <td><%= horario.codigo %></td>
+        <td><%= horario.medico.completo %></td>
+        <td><%= horario.dia.nombre %></td>
+          <td><%= horario.medico.especialidade.descripcion %></td>
+        <td><%= horario.horadesde.strftime("%R") %></td>
+        <td><%= horario.horahasta.strftime("%R") %></td>
+        <td><%= horario.fecha %></td>
+        <td><%= link_to 'Ver', horario %></td>
+        <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
+        <td><%= link_to 'Eliminar', horario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+  <% if can? :create, @horario %>
+<%= link_to 'Nuevo Horario', new_horario_path %>
+  <% end %>

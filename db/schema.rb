@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116145841) do
+ActiveRecord::Schema.define(version: 20171120224542) do
+
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "audits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "auditable_id"
@@ -34,6 +39,15 @@ ActiveRecord::Schema.define(version: 20171116145841) do
     t.index ["user_id", "user_type"], name: "user_index"
   end
 
+  create_table "ciudades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "codigo"
+    t.string "nombre"
+    t.bigint "departamento_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departamento_id"], name: "index_ciudades_on_departamento_id"
+  end
+
   create_table "dashboards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,7 +58,15 @@ ActiveRecord::Schema.define(version: 20171116145841) do
     t.bigint "regione_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "codigo"
     t.index ["regione_id"], name: "index_departamentos_on_regione_id"
+  end
+
+  create_table "dias", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "ncodigo"
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "especialidades", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,8 +75,97 @@ ActiveRecord::Schema.define(version: 20171116145841) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "historial_pacientes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "codigo"
+    t.string "diagnostico"
+    t.string "indicaciones"
+    t.bigint "reserva_id"
+    t.string "estudios"
+    t.string "resultestudios"
+    t.date "fecha_proxima_cita"
+    t.string "recomendaciones"
+    t.integer "precio"
+    t.integer "descuento"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reserva_id"], name: "index_historial_pacientes_on_reserva_id"
+  end
+
+  create_table "horarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "codigo"
+    t.bigint "medico_id"
+    t.bigint "dia_id"
+    t.time "horadesde"
+    t.time "horahasta"
+    t.date "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dia_id"], name: "index_horarios_on_dia_id"
+    t.index ["medico_id"], name: "index_horarios_on_medico_id"
+  end
+
+  create_table "medicos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "ci"
+    t.string "nro_registro"
+    t.string "nombre"
+    t.string "apellido"
+    t.bigint "sexo_id"
+    t.bigint "ciudade_id"
+    t.string "direccion"
+    t.string "telefono"
+    t.string "celular"
+    t.date "fecha_naci"
+    t.string "correo"
+    t.string "contacto_familiar"
+    t.bigint "especialidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ciudade_id"], name: "index_medicos_on_ciudade_id"
+    t.index ["especialidade_id"], name: "index_medicos_on_especialidade_id"
+    t.index ["sexo_id"], name: "index_medicos_on_sexo_id"
+  end
+
+  create_table "pacientes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "ci"
+    t.string "nombre"
+    t.string "apellido"
+    t.bigint "sexo_id"
+    t.bigint "ciudade_id"
+    t.string "direccion"
+    t.string "telefono"
+    t.string "celular"
+    t.date "fecha_naci"
+    t.string "correo"
+    t.string "contacto_familiar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ciudade_id"], name: "index_pacientes_on_ciudade_id"
+    t.index ["sexo_id"], name: "index_pacientes_on_sexo_id"
+  end
+
   create_table "regiones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "codigo"
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "codigo"
+    t.integer "nro"
+    t.string "asunto"
+    t.bigint "paciente_id"
+    t.bigint "medico_id"
+    t.date "fecha"
+    t.time "hora"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["medico_id"], name: "index_reservas_on_medico_id"
+    t.index ["paciente_id"], name: "index_reservas_on_paciente_id"
+  end
+
+  create_table "sexos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,9 +184,21 @@ ActiveRecord::Schema.define(version: 20171116145841) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ciudades", "departamentos"
   add_foreign_key "departamentos", "regiones"
+  add_foreign_key "historial_pacientes", "reservas"
+  add_foreign_key "horarios", "dias"
+  add_foreign_key "horarios", "medicos"
+  add_foreign_key "medicos", "ciudades"
+  add_foreign_key "medicos", "especialidades"
+  add_foreign_key "medicos", "sexos"
+  add_foreign_key "pacientes", "ciudades"
+  add_foreign_key "pacientes", "sexos"
+  add_foreign_key "reservas", "medicos"
+  add_foreign_key "reservas", "pacientes"
 end

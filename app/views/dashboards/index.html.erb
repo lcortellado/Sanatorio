@@ -1,13 +1,230 @@
 
-  <h1 align="center">ALTAS DE DATOS</h1>
-    <div class="col-md-9 col-md-offset-2 col-sm-10 col-sm-offset-10">
+<section class="section-white">
+  <div class="container">
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+            <img src="<%= asset_path 'slide06.jpg' %>">
+          <div class="carousel-caption">
+            <h2>SANASYS</h2>
+          </div>
+        </div>
+        <div class="item">
+         <img src="<%= asset_path 'slide01.jpg' %>">
+          <div class="carousel-caption">
+            <h2>SANASYS</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img src="<%= asset_path 'slide03.jpg' %>">
+          <div class="carousel-caption">
+            <h2>SANASYS</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
- 
- <%= link_to  especialidades_path, class: "btn btn-primary" do %> 
-      
-<!-- Documentos de producto icon by Icons8 -->
-<!-- Edición de mapas icon by Icons8 -->
- <img class="icon icons8-Visita" width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEvUlEQVRoQ+2Zy28bRRjAf2M7VCihcQUS3IgjQTk0JamEQGCLRJGQECmUGw6PUIkKOKUcSSUoB8KR5tLykkoCJNygtAiEFNWVLYqElIamHAJSHn8Akg3JofVj0Iw367XX9u6sN60q9btEu56d+X4z32u+CG5zEbe5/twBuNUnGOoJyCcZJMoEkkEgjtB/QbIM5IEMFc6JX/VzKBIKgHyKCSKcBPp8arUBvCOyfO9zfMthHQHIJ+gjxlkEw4EUkWQocVT8hgIKJIEBZJJhBN9pU+lM8pQZCWpWgQAs5S92pnfD12WGgkAYA2iz6eJKq50vHkhxfTRNKTFAuf+g1jK6dpXY+gp7FhfoupZtxZ2nyJCpOZkDJLnYzObLiYNsvzFNcSDV9mC6VrJ0fzFFdP2qe5wkI3KMmJysEYBM8TpwtnEBpXxh+jyy2587iO08vVOHm0PAiybRyRRgvTFUNlP+/Jrg21XBXyryAw/HIf2IZCwhbfY2EBsiS8LvKfgGsJKUsv06KUz/SOlAUr/77wa8tRixFW8cq0A+Ga1wz13VX5Q57T0x5tbVwKH9AyQ5hWDSuZpy2H+nL9ivxn+K8Le16612UEF882zF/nnv1JjbsSUfiJxOjJ5iApBB8LRzxq3JM1wfHdev5lcFHy/VpotcPk1k87L+bfbMKeTd+3jl54h+fu9xyeH+qjntWZynZ+btekUll0TOX3I0Abhi1zbWcvmZHOXEgH5y7r5SPvqnynFVmf3stAZ4+dJ9+tl5CirExo83RC7Jssgx5Ln94L+clilqHmjN/M8PBXuNxxaqu6skNncEcWO7bn3Z8wCll76y3/2erpnRvc/3unQVWX+6+T+BTgG676eU/voWAiRZRvCoc6tamtDSHNGl2m6rb8qHXqVy6DX9+UNxmLccObq+QnyyGsVskfwhclYp7mFHJifwJTDhnK+tEy/NEVn9RQ+v7H/GVl49ezoxzIqsTpqeYgLgysJBwqhz95V2TcMoHBVZ1IZ5im8ANZNM6VtVncc1JrI3F1vnAqX8p45EFruWo3fquUYlCyLrv0Q3BXCZkS4lPryA7KlxqVJiYVXYSU0pnt5fi/1KY7FVoPfEWLN6yLf56Hk8z8jpW9VSWtVDddIMot28bZSHIgmTktoIQJtREldGVu8VxNaxj+y6qBWAMpuez99tVU77zsA78wcBUFfJlrex6oVmnFL/gJ2lVaiMrakLzXy7C43qXoyIHBkTqzAGaHcKJgu7xhrUP85vgwFU+z+u0rojAIMSumMAK6S6IlIHAEaRJxyAakRSHTZ3JWZGUqDIoEnkCQXA8oWTCN4307dhtMHlpdk6gXzAOZFMsoHgwUAQkk2R892ObLpEGABtw2pbsABhs3G+jgEsU3Ldlz1PRDIjchz3HOcxIByAYeKUdYPWr0MXiNInMro47EhCAbDC6hHQzV4/YtS8ajdhaAAWhOr3v+BBcE5kUbChSLgAypRK+urZPCpJNokxGIbp7NCHCmA5dOuoFELU2ZUo1DipbNLFI6Soc1MArJOodTEMugymjhG6Ce0oYDWDq7V9meEg/33xA7NrAFZU0q0Rvx0GPwrfNBMKokyQb3b1BIIoZPrNHQDTHQt7/P/f9rRA6ltTCQAAAABJRU5ErkJggg==">Especialidades
- <% end %>
- </p>
+<section id="yt_spotlight2" class="block">						<div class="yt-main">
+							<div class="yt-main-in1 container">
+								<div class="yt-main-in2 row-fluid">
+										<div id="bottom1" class="span3">
+			<!--<div class="yt-position-inner">-->
+				    	
+	<div class="module   clearfix">
+	    	    <div class="modcontent clearfix">
+			<div class="modcontent-inner clearfix">
+				
+
+
+			</div>
+	    </div>
+	</div>
+    
+    
+<div class="jumbotron">
+  <h1>BIENVENIDO a su Sanatorio de confianza!
+
+</div>
+		<style>
+                                        
+#myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+}
+
+#myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#myFooter .row {
+    margin-bottom: 60px;
+}
+
+#myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+}
+
+#myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+#myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+#myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+#myFooter .social-networks a:hover {
+    text-decoration: none;
+}
+
+#myFooter .facebook:hover {
+    color: #0077e2;
+}
+
+#myFooter .google:hover {
+    color: #ef1a1a;
+}
+
+#myFooter .twitter:hover {
+    color: #00aced;
+}
+
+#myFooter .btn {
+    color: white;
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+@media screen and (max-width: 767px) {
+    #myFooter {
+        text-align: center;
+    }
+}
+
+
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+
+html{
+    height: 100%;
+}
+
+
+
+
+
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+}    </style>
+
+   <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="#"> SANASYS </a></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Comience</h5>
+                    <ul>
+                        <li><%= link_to 'Inicio', root_path %></li>
+                        <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+                        
+                        <li><%= link_to "Imprimir Lista de Profesionales (PDF)", medicos_path(@medicos, format: 'pdf') %></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Ayuda</h5>
+                    <ul>
+                        <li><a href="#">Informacion Sanays</a></li>
+                        <li><a href="#">Contactos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contactos</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2017 Sanasys </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

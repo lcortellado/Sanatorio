@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+ <div class="panel-heading"></div>
+ <div class="panel-body">
+  <%= render partial: 'layouts/search_form', locals: { search_entity: 'Pacientes', word: "Numero Cedula" } %>
+  <br>
+  <div class="col-md-5 col-md-offset-5 col-sm-5 col-sm-offset-5">
+   
+    <p>
+        <%= link_to  new_paciente_path, remote: true, class: "btn btn-success" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Registrar Paciete
+    <% end %>
+     
+      </p>
+    
+    
+    
+  
+  </div>
+  
+  
+ </div>
+ <%= render partial: 'result_search' %>
+</div>

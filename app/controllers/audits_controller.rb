@@ -3,6 +3,7 @@ class AuditsController < ApplicationController
 
 def index
    @audits= Audit.all 
+    @users= User.all 
 end
 
 end

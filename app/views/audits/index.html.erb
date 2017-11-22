@@ -1,3 +1,4 @@
+<h2 align="center">Auditoria</h2>
 <table class="table">
  <thead>
   
@@ -8,6 +9,7 @@
    <th>Accion</th>
    <th>Descripcion</th>
     <th>Fecha</th>
+    <th>Hora</th>
     <th>Responsable</th>
    <th colspan="2"></th>
   </tr>
@@ -25,7 +27,9 @@
      <td><%= audit.action %></td>
       <td><%= audit.audited_changes %></td>
        <td><%= audit.created_at.strftime("%d/%m/%Y") %></td>
+       <td><%= audit.created_at.strftime("%R") %></td>
       <td><%= audit.user.email %></td>
+      
     
      
     </tr>

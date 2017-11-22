@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 gem 'backup-rails'
 gem 'annotate'
 gem 'bower-rails'

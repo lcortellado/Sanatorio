@@ -1,29 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Departamentos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Regione</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @departamentos.each do |departamento| %>
-      <tr>
-        <td><%= departamento.nombre %></td>
-        <td><%= departamento.regione %></td>
-        <td><%= link_to 'Show', departamento %></td>
-        <td><%= link_to 'Edit', edit_departamento_path(departamento) %></td>
-        <td><%= link_to 'Destroy', departamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="panel panel-default">
+ <div class="panel-heading">Departamentos</div>
+ <div class="panel-body">
+  <%= render partial: 'layouts/search_form', locals: { search_entity: 'departamentos', word: "Departamentos" } %>
+  <br>
+  <div class="col-md-5 col-md-offset-5 col-sm-5 col-sm-offset-5">
+   <p>
+     <%= link_to  new_departamento_path, remote: true, class: "btn btn-primary" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Departamento
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Departamento', new_departamento_path %>
+    
+     <%= link_to  new_ciudade_path, remote: true, class: "btn btn-primary" do %> 
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Ciudades
+    <% end %>
+   </p>
+  </div>
+  
+  
+ </div>
+ <%= render partial: 'result_search' %>
+</div>

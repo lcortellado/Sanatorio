@@ -1,0 +1,72 @@
+<%= form_with(model: historial_paciente, local: true) do |form| %>
+  <% if historial_paciente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(historial_paciente.errors.count, "error") %> prohibited this historial_paciente from being saved:</h2>
+
+      <ul>
+      <% historial_paciente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo, id: :historial_paciente_codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diagnostico %>
+    <%= form.text_field :diagnostico, id: :historial_paciente_diagnostico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :indicaciones %>
+    <%= form.text_field :indicaciones, id: :historial_paciente_indicaciones %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reserva_id %>
+    <%= form.text_field :reserva_id, id: :historial_paciente_reserva_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estudios %>
+    <%= form.text_field :estudios, id: :historial_paciente_estudios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resultestudios %>
+    <%= form.text_field :resultestudios, id: :historial_paciente_resultestudios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_proxima_cita %>
+    <%= form.date_select :fecha_proxima_cita, id: :historial_paciente_fecha_proxima_cita %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recomendaciones %>
+    <%= form.text_field :recomendaciones, id: :historial_paciente_recomendaciones %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precio %>
+    <%= form.number_field :precio, id: :historial_paciente_precio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descuento %>
+    <%= form.number_field :descuento, id: :historial_paciente_descuento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.number_field :total, id: :historial_paciente_total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

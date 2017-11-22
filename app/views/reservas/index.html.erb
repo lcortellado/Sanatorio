@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>codigo</th>
+      <th>Asunto</th>
+       <th>Numero</th>
+      <th>Paciente</th>
+      <th>Medico</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+       <th>Fecha Creacion</th>
+      <th>Fecha Modificacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservas.each do |reserva| %>
+      <tr>
+        <td><%= reserva.id %></td>
+        <td><%= reserva.asunto %></td>
+        <td><%= reserva.nro %></td>
+        <td><%= reserva.paciente.completo %></td>
+        <td><%= reserva.medico.completo %></td>
+        <td><%= reserva.fecha.strftime("%d/%m/%Y") %></td>
+        <td><%= reserva.hora.strftime("%R") %></td>
+         <td><%= reserva.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= reserva.updated_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', reserva %></td>
+        <td><%= link_to 'Edit', edit_reserva_path(reserva) %></td>
+        <td><%= link_to 'Destroy', reserva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reserva', new_reserva_path, class: "btn btn-primary" %>

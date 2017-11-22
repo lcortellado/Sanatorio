@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @horario.codigo %>
+</p>
+
+<p>
+  <strong>Medico:</strong>
+  <%= @horario.medico %>
+</p>
+
+<p>
+  <strong>Dia:</strong>
+  <%= @horario.dia %>
+</p>
+
+<p>
+  <strong>Horadesde:</strong>
+  <%= @horario.horadesde %>
+</p>
+
+<p>
+  <strong>Horahasta:</strong>
+  <%= @horario.horahasta %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @horario.fecha %>
+</p>
+
+<%= link_to 'Edit', edit_horario_path(@horario) %> |
+<%= link_to 'Back', horarios_path %>

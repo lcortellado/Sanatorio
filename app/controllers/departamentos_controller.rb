@@ -3,8 +3,25 @@ class DepartamentosController < ApplicationController
 
   # GET /departamentos
   # GET /departamentos.json
+     PAGE_SIZE = 19
   def index
-    @departamentos = Departamento.all
+  
+      
+      @page = (params[:page] || 0).to_i
+
+   if params[:keywords].present?
+     @keywords = params[:keywords]
+     @departamentos = Departamento.where("lower(nombre) LIKE '%#{@keywords.downcase}%'").order("codigo ASC" )
+                    .offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
+     number_of_records = Departamento.where("lower(nombre) LIKE '%#{@keywords.downcase}%'").count
+
+       else
+     @departamentos = Departamento.order('codigo ASC').offset(PAGE_SIZE * @page).limit(PAGE_SIZE)
+     number_of_records = Departamento.count
+   end
+   @number_of_pages = (number_of_records % PAGE_SIZE) == 0 ? 
+                       number_of_records / PAGE_SIZE - 1 : number_of_records / PAGE_SIZE
+
   end
 
   # GET /departamentos/1
@@ -24,15 +41,17 @@ class DepartamentosController < ApplicationController
   # POST /departamentos
   # POST /departamentos.json
   def create
-    @departamento = Departamento.new(departamento_params)
+       
+    @departamento = Departamento.create(departamento_params)
 
     respond_to do |format|
       if @departamento.save
-        format.html { redirect_to @departamento, notice: 'Departamento was successfully created.' }
+        format.html { redirect_to departamentos_url, notice: 'Departamento was successfully created.' }
         format.json { render :show, status: :created, location: @departamento }
       else
         format.html { render :new }
         format.json { render json: @departamento.errors, status: :unprocessable_entity }
+           format.js { render show: @departamento.errors }
       end
     end
   end
@@ -42,7 +61,7 @@ class DepartamentosController < ApplicationController
   def update
     respond_to do |format|
       if @departamento.update(departamento_params)
-        format.html { redirect_to @departamento, notice: 'Departamento was successfully updated.' }
+        format.html { redirect_to departamentos_url, notice: 'Departamento was successfully updated.' }
         format.json { render :show, status: :ok, location: @departamento }
       else
         format.html { render :edit }
@@ -69,6 +88,6 @@ class DepartamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def departamento_params
-      params.require(:departamento).permit(:nombre, :regione_id)
+      params.require(:departamento).permit(:nombre, :regione_id, :codigo)
     end
 end

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Historial Pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Diagnostico</th>
+      <th>Indicaciones</th>
+      <th>Reserva</th>
+      <th>Estudios</th>
+      <th>Resultestudios</th>
+      <th>Fecha proxima cita</th>
+      <th>Recomendaciones</th>
+      <th>Precio</th>
+      <th>Descuento</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @historial_pacientes.each do |historial_paciente| %>
+      <tr>
+        <td><%= historial_paciente.codigo %></td>
+        <td><%= historial_paciente.diagnostico %></td>
+        <td><%= historial_paciente.indicaciones %></td>
+        <td><%= historial_paciente.reserva %></td>
+        <td><%= historial_paciente.estudios %></td>
+        <td><%= historial_paciente.resultestudios %></td>
+        <td><%= historial_paciente.fecha_proxima_cita %></td>
+        <td><%= historial_paciente.recomendaciones %></td>
+        <td><%= historial_paciente.precio %></td>
+        <td><%= historial_paciente.descuento %></td>
+        <td><%= historial_paciente.total %></td>
+        <td><%= link_to 'Show', historial_paciente %></td>
+        <td><%= link_to 'Edit', edit_historial_paciente_path(historial_paciente) %></td>
+        <td><%= link_to 'Destroy', historial_paciente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Historial Paciente', new_historial_paciente_path %>

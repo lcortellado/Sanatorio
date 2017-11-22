@@ -12,19 +12,32 @@
     
    
   </head>
+  
 
   <body class="<%= controller_name %> <%= action_name %>" id="<%= controller_name %>-<%= action_name %>">
-   <p id="notice"></p>
-
-    <%= render 'layouts/topbar' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= value %>
+    </div>
+<% end %>
+   
+ <%  if  user_signed_in? and current_user.name == 'admin' %>
+    <%= render 'layouts/topbaradmin' %>
+        <%  else if  user_signed_in? %>
+         <%= render 'layouts/topbar' %>
+        <% else  %>
+         <%= render 'layouts/topbar' %>
+        <% end%>
+          <% end%>
+        
+            
     </br>
     </br>
     </br>
     </br>
      
-    
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
+ 
    
    
     <%= yield %>

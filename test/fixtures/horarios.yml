@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  medico: one
+  dia: one
+  horadesde: 2017-11-20 13:36:12
+  horahasta: 2017-11-20 13:36:12
+  fecha: 2017-11-20
+
+two:
+  codigo: MyString
+  medico: two
+  dia: two
+  horadesde: 2017-11-20 13:36:12
+  horahasta: 2017-11-20 13:36:12
+  fecha: 2017-11-20

@@ -1,27 +1,56 @@
-<%= form_with(model: departamento, local: true) do |form| %>
-  <% if departamento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(departamento.errors.count, "error") %> prohibited this departamento from being saved:</h2>
-
-      <ul>
-      <% departamento.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre, id: :departamento_nombre %>
-  </div>
-
-  <div class="field">
-    <%= form.label :regione_id %>
-    <%= form.text_field :regione_id, id: :departamento_regione_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div id="departamento-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><%= title %></h4>
+      </div>
+<%= form_for @departamento, remote: true do |form| %>
+  <% if @departamento.errors.any? %>
 <% end %>
+    <div class="modal-body">
+    <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :codigo %>
+     </div>
+ <div class="col-xs-4">
+    <%= form.text_field :codigo, autofocus: true, placeholder: "", class: "form-control" %>
+    </div>
+  </div>
+
+   <div class="form-group row">
+  <div class="col-xs-2">
+    <%= form.label :nombre %>
+     </div>
+ <div class="col-xs-5">
+    <%= form.text_field :nombre, autofocus: true, placeholder: "", class: "form-control" %>
+
+  
+    </div>
+  </div>
+ <div class="form-group row">
+  <div class="col-xs-2">
+  <%= form.label :region_id %>
+  </div>
+ <div class="col-xs-5">
+     <%= form.collection_select :regione_id, Regione.all, :id, :nombre, 
+                  {selected: @departamento.regione_id, include_blank: 'Seleccione region'},
+                  {class: "form-control"} %>
+     
+   </div>
+  </div>
+
+  <div class="form-group row">
+<div class="col-xs-10">
+   <div class="col-xs-5">
+   </div>
+   <%= form.submit "Aceptar", class: "btn btn-success" %>
+   <%= link_to 'Atras', departamentos_path, class: "btn btn-success" %>
+   </div>
+    </div>
+    </div>
+<% end %>
+ </div>
+  </div>
+</div>
+</div>
